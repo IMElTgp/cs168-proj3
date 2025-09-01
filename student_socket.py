@@ -824,7 +824,7 @@ class StudentUSocket(StudentUSocketBase):
       ## Start of Stage 4.1 ##
       if seg.ack |GT| self.snd.nxt:
         return False
-      elif seg.ack |GE| self.snd.una: # GE或GT都行??
+      elif seg.ack |GE| self.snd.una: # GE或GT
         self.handle_accepted_ack(seg)
       elif self.snd.una |GT| seg.ack:
         continue_after_ack = False
